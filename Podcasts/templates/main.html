@@ -1,0 +1,43 @@
+{#<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+{#<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>#}
+{#<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
+{#<link rel="stylesheet" href="css/mainstyles.css">#}
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+    <head>
+        {% load static %}
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}" type="text/css"  >
+    </head>
+    <body>
+        <div class="col-md-12" align="center">
+            <div class="col-md-6">
+                <h1>Podcast Search Engine</h1>
+            </div>
+            <div class="col-md-6">
+                <label class="radio">History
+                  <input type="radio" checked="checked" name="is_company">
+                  <span class="checkround"></span>
+                </label>
+                <label class="radio">Philosophy
+                  <input type="radio" name="is_company">
+                  <span class="checkround"></span>
+                </label>
+                <label class="radio">Health/Nutrition
+                  <input type="radio" name="is_company">
+                  <span class="checkround"></span>
+                </label>
+                <label class="radio">Technology
+                  <input type="radio" name="is_company">
+                  <span class="checkround"></span>
+                </label>
+                <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
+                    <a href="{% url 'results' %}">Search</a>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

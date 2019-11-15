@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Podca &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static '/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static '/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+{#    <link rel="stylesheet" href="{% static '/css/aos.css' %}">#}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <!-- for button -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" id="bootstrap-css">
+  </head>
+  <body>
+  <div class="site-wrap">
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar py-4 absolute transparent" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+
+          <div class="col-3" data-aos="fade-down">
+            <h1><a href="{% url 'home' %}" class="text-white h2">Home</a></h1>
+          </div>
+          <div class="col-9" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
+
+
+
+                <div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+                <ul class="site-menu js-clone-nav d-none">
+                  <li class="has-children active">
+                    <a href="{% url 'home' %}">Home</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="#">Menu One</a></li>
+                      <li><a href="#">Menu Two</a></li>
+                      <li><a href="#">Menu Three</a></li>
+                      <li class="has-children">
+                        <a href="#">Sub Menu</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Menu One</a></li>
+                          <li><a href="#">Menu Two</a></li>
+                          <li><a href="#">Menu Three</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="has-children">
+                    <a href="#">Dropdown</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="#">Menu One</a></li>
+                      <li><a href="#">Menu Two</a></li>
+                      <li><a href="#">Menu Three</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+
+    <div class="site-section bg-light">
+      <div class="container">
+
+        <div class="row mb-5" data-aos="fade-up">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Recent Podcasts</h2>
+          </div>
+        </div>
+
+        <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+          <div class="image" style="background-image: url('/static/images/bwenda.jpg');"></div>
+          <div class="text">
+
+            <h3 class="font-weight-light"><a href="single-post.html">Episode 08: why bwenda is a poopnose</a></h3>
+            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Hussain Humadi <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
+            <p class="mb-4">lmao idk.</p>
+
+            <div class="player">
+              <audio id="player2" preload="none" controls style="max-width: 100%">
+                <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+              </audio>
+            </div>
+
+          </div>
+        </div>
+
+
+         <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+          <div class="image" style="background-image: url('/static/images/img_2.jpg');"></div>
+          <div class="text">
+
+            <h3 class="font-weight-light"><a href="single-post.html">Title</a></h3>
+            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Author <span class="sep">/</span> Date Published <span class="sep">/</span> Duration</small></span></div>
+            <p class="mb-4">Description</p>
+
+
+            <div class="player">
+              <audio id="player2" preload="none" controls style="max-width: 100%">
+                <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+              </audio>
+            </div>
+
+          </div>
+        </div>
+
+
+         <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+            <div class="image" style="background-image: url('/static/images/img_3.jpg');"></div>
+            <div class="text">
+
+              <h3 class="font-weight-light"><a href="single-post.html">Episode 06: How To Create Web Page Using Bootstrap 4</a></h3>
+              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
+
+              <div class="player">
+                <audio id="player2" preload="none" controls style="max-width: 100%">
+                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+                </audio>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+            <div class="image" style="background-image: url('/static/images/img_4.jpg');"></div>
+            <div class="text">
+
+              <h3 class="font-weight-light"><a href="single-post.html">Episode 05: How To Create Web Page Using Bootstrap 4</a></h3>
+              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
+
+              <div class="player">
+                <audio id="player2" preload="none" controls style="max-width: 100%">
+                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+                </audio>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+            <div class="image" style="background-image: url('/static/images/img_5.jpg');"></div>
+            <div class="text">
+
+              <h3 class="font-weight-light"><a href="single-post.html">Episode 04: How To Create Web Page Using Bootstrap 4</a></h3>
+              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
+
+              <div class="player">
+                <audio id="player2" preload="none" controls style="max-width: 100%">
+                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+                </audio>
+              </div>
+            </div>
+          </div>
+
+
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="site-block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+            <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;"><a href="{% url 'confirmation' %}">Confirm Selection</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/mediaelement-and-player.min.js"></script>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+                var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+                for (var i = 0; i < total; i++) {
+                    new MediaElementPlayer(mediaElements[i], {
+                        pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
+                        shimScriptAccess: 'always',
+                        success: function () {
+                            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                            for (var j = 0; j < targetTotal; j++) {
+                                target[j].style.visibility = 'visible';
+                            }
+                  }
+                });
+                }
+            });
+    </script>
+
+
+  <script src="js/main.js"></script>
+
+  </body>
+</html>
