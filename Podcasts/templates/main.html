@@ -18,25 +18,27 @@
                 <h1>Podcast Search Engine</h1>
             </div>
             <div class="col-md-6">
-                <label class="radio">History
-                  <input type="radio" checked="checked" name="is_company">
-                  <span class="checkround"></span>
-                </label>
-                <label class="radio">Philosophy
-                  <input type="radio" name="is_company">
-                  <span class="checkround"></span>
-                </label>
-                <label class="radio">Health/Nutrition
-                  <input type="radio" name="is_company">
-                  <span class="checkround"></span>
-                </label>
-                <label class="radio">Technology
-                  <input type="radio" name="is_company">
-                  <span class="checkround"></span>
-                </label>
-                <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
-                    <a href="{% url 'results' %}">Search</a>
-                </button>
+                <form>
+                    <label class="radio">History
+                      <input type="radio" checked="checked" name="is_company">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Philosophy
+                      <input type="radio" name="is_company">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Health/Nutrition
+                      <input type="radio" name="is_company">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Technology
+                      <input type="radio" name="is_company">
+                      <span class="checkround"></span>
+                    </label>
+                    <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
+                        <a href="{% url 'results' %}">Search</a>
+                    </button>
+                </form>
             </div>
         </div>
     </body>

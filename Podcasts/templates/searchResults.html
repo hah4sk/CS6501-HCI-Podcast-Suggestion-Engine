@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}">
+      <link rel="stylesheet" href="{% static '/css/checkbox.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 {#    <link rel="stylesheet" href="{% static '/css/aos.css' %}">#}
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
@@ -92,17 +93,23 @@
 
         <div class="row mb-5" data-aos="fade-up">
           <div class="col-md-12 text-center">
-            <h2 class="font-weight-bold text-black">Recent Podcasts</h2>
+            <h2 class="font-weight-bold text-black">Search Results</h2>
           </div>
         </div>
-
+        <div>
+          <label class="control control-checkbox">
+            Select
+            <input type="checkbox" checked="checked" />
+            <div class="control_indicator"></div>
+          </label>
+        </div>
         <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
           <div class="image" style="background-image: url('/static/images/bwenda.jpg');"></div>
           <div class="text">
 
             <h3 class="font-weight-light"><a href="single-post.html">Episode 08: why bwenda is a poopnose</a></h3>
             <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Hussain Humadi <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-            <p class="mb-4">lmao idk.</p>
+            <p class="mb-4">lmao idk. </p>
 
             <div class="player">
               <audio id="player2" preload="none" controls style="max-width: 100%">
@@ -118,9 +125,9 @@
           <div class="image" style="background-image: url('/static/images/img_2.jpg');"></div>
           <div class="text">
 
-            <h3 class="font-weight-light"><a href="single-post.html">Title</a></h3>
-            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Author <span class="sep">/</span> Date Published <span class="sep">/</span> Duration</small></span></div>
-            <p class="mb-4">Description</p>
+            <h3 class="font-weight-light"><a href="single-post.html">{{ podcast.name }}</a></h3>
+            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By {{ podcast.author }} <span class="sep">/</span> Date Published <span class="sep">/</span> Duration</small></span></div>
+            <p class="mb-4">{{ podcast.description }}</p>
 
 
             <div class="player">

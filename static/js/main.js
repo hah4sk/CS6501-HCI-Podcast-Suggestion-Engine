@@ -162,25 +162,29 @@ jQuery(document).ready(function($) {
 			$('.nonloop-block-13').owlCarousel({
 		    center: false,
 		    items: 1,
-		    loop: false,
+		    loop: true,
 				stagePadding: 0,
-		    margin: 20,
+		    margin: 0,
+		    autoplay: true,
 		    nav: true,
 				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
 		    responsive:{
 	        600:{
-	        	margin: 20,
+	        	margin: 0,
+	        	nav: true,
 	          items: 2
 	        },
 	        1000:{
-	        	margin: 20,
+	        	margin: 0,
 	        	stagePadding: 0,
-	          items: 2
+	        	nav: true,
+	          items: 3
 	        },
 	        1200:{
-	        	margin: 20,
+	        	margin: 0,
 	        	stagePadding: 0,
-	          items: 3
+	        	nav: true,
+	          items: 4
 	        }
 		    }
 			});
@@ -192,10 +196,11 @@ jQuery(document).ready(function($) {
 	    loop: true,
 			stagePadding: 0,
 	    margin: 0,
+	    smartSpeed: 1000,
 	    autoplay: true,
 	    pauseOnHover: false,
 	    nav: true,
-	    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">']
+	    navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
 	  });
 	};
 	siteCarousel();
@@ -225,5 +230,30 @@ jQuery(document).ready(function($) {
 				
 	};
 	siteCountDown();
+
+	var siteDatePicker = function() {
+
+		if ( $('.datepicker').length > 0 ) {
+			$('.datepicker').datepicker();
+		}
+
+	};
+	siteDatePicker();
+
+	var siteRangeSlider = function() {
+
+		$('input[type="range"]').rangeslider({
+	    polyfill : false,
+	    onInit : function() {
+	        this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+	    },
+	    onSlide : function( position, value ) {
+	        this.output.html( value );
+	    }
+		});
+
+	};
+	siteRangeSlider();
+	
 
 });
