@@ -120,93 +120,43 @@
           </div>
         </div>
 
-
-         <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-          <div class="image" style="background-image: url('/static/images/img_2.jpg');"></div>
-          <div class="text">
-
-            <h3 class="font-weight-light"><a href="single-post.html">{{ podcast.name }}</a></h3>
-            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By {{ podcast.author }} <span class="sep">/</span> Date Published <span class="sep">/</span> Duration</small></span></div>
-            <p class="mb-4">{{ podcast.description }}</p>
-
-
-            <div class="player">
-              <audio id="player2" preload="none" controls style="max-width: 100%">
-                <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-              </audio>
-            </div>
-
+        {% for podcast in podcasts %}
+          <div>
+            <label class="control control-checkbox">
+                Select
+                <input type="checkbox" />
+                <div class="control_indicator"></div>
+            </label>
           </div>
-        </div>
-
-
-         <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-            <div class="image" style="background-image: url('/static/images/img_3.jpg');"></div>
-            <div class="text">
-
-              <h3 class="font-weight-light"><a href="single-post.html">Episode 06: How To Create Web Page Using Bootstrap 4</a></h3>
-              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-              <div class="player">
-                <audio id="player2" preload="none" controls style="max-width: 100%">
-                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                </audio>
-              </div>
-            </div>
-          </div>
-
-
           <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-            <div class="image" style="background-image: url('/static/images/img_4.jpg');"></div>
+            <div class="image" style="background-image: url('/static/media/{{ podcast.image_filename }}.jpg');"></div>
             <div class="text">
 
-              <h3 class="font-weight-light"><a href="single-post.html">Episode 05: How To Create Web Page Using Bootstrap 4</a></h3>
-              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-              <div class="player">
-                <audio id="player2" preload="none" controls style="max-width: 100%">
-                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                </audio>
-              </div>
+                <h3 class="font-weight-light"><a href="single-post.html">{{ podcast.name }}</a></h3>
+                <div class="text-white mb-3"><span class="text-black-opacity-05">
+                    <small>
+                        By {{ podcast.author }} <span class="sep">/</span> {{ podcast.date_published }} <span class="sep">/</span> {{ podcast.runtime }}
+                    </small></span>
+                </div>
+                <p class="mb-4">{{ podcast.description }}</p>
+                <div class="player">
+{#                    <audio id="player2" preload="none" controls style="max-width: 100%">#}
+{#                    <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">#}
+{#                    </audio>#}
+                </div>
             </div>
           </div>
-
-
-          <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-            <div class="image" style="background-image: url('/static/images/img_5.jpg');"></div>
-            <div class="text">
-
-              <h3 class="font-weight-light"><a href="single-post.html">Episode 04: How To Create Web Page Using Bootstrap 4</a></h3>
-              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-              <div class="player">
-                <audio id="player2" preload="none" controls style="max-width: 100%">
-                  <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                </audio>
-              </div>
-            </div>
-          </div>
-
+        {% endfor %}
 
       </div>
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="site-block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-            <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;"><a href="{% url 'confirmation' %}">Confirm Selection</a></button>
+            <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
+                <a href="{% url 'confirmation' %}">
+                    Confirm Selection
+                </a>
+            </button>
           </div>
         </div>
       </div>

@@ -18,26 +18,28 @@
                 <h1>Podcast Search Engine</h1>
             </div>
             <div class="col-md-6">
-                <form>
-                    <label class="radio">History
-                      <input type="radio" checked="checked" name="is_company">
+                <form method="post" action="/results/">
+                    {% csrf_token %}
+                    <label class="radio">Anime
+                      <input type="radio" checked="checked" name="genre" value="Anime">
                       <span class="checkround"></span>
                     </label>
-                    <label class="radio">Philosophy
-                      <input type="radio" name="is_company">
+                    <label class="radio">Comedy
+                      <input type="radio" name="genre" value="Comedy">
                       <span class="checkround"></span>
                     </label>
-                    <label class="radio">Health/Nutrition
-                      <input type="radio" name="is_company">
+                    <label class="radio">Society
+                      <input type="radio" name="genre" value="Society">
                       <span class="checkround"></span>
                     </label>
                     <label class="radio">Technology
-                      <input type="radio" name="is_company">
+                      <input type="radio" name="genre" value="Technology">
                       <span class="checkround"></span>
                     </label>
-                    <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
-                        <a href="{% url 'results' %}">Search</a>
+                    <button  class="btn cust-btn " type="submit" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
+                        Search
                     </button>
+{#                    <input type="submit" value="SEARCH">#}
                 </form>
             </div>
         </div>
