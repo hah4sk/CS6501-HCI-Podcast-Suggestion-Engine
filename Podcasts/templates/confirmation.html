@@ -10,8 +10,14 @@
                 <h1>Confirmation</h1>
             </div>
             <div class="col-md-6">
-                Gang gang! You selected your shit!
-                <a href="{% url 'home' %}">Go back to main page to select the next genre</a>
+                You Selected Your Stuff :D
+                <a href="{% url 'select_genre' %}">Go back to main page to select the next genre</a>
+            </div>
+        </div>
+        <div class="col-md-12" align="center">
+            <div class="col-md-6">
+                <b>Or, If you are done selecting your podcasts,</b>
+                <a href="{% url 'complete_activity' %}">Click here to confirm your selections</a>
             </div>
         </div>
     </body>

@@ -5,9 +5,11 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
+    url(r'^$', views.signup, name='signup'),
+    url(r'^select_genre', views.select_genre, name='select_genre'),
     url(r'^results', views.search_results, name='results'),
-    url(r'^confirmation', views.confirmation, name='confirmation')
+    url(r'^confirmation', views.confirmation, name='confirmation'),
+    url(r'^complete_activity', views.complete_activity, name='complete_activity')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

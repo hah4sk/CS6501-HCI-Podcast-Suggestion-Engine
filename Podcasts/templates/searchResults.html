@@ -40,7 +40,7 @@
 
 
           <div class="col-3" data-aos="fade-down">
-            <h1><a href="{% url 'home' %}" class="text-white h2">Home</a></h1>
+            <h1><a href="{% url 'select_genre' %}" class="text-white h2">Home</a></h1>
           </div>
           <div class="col-9" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
@@ -51,7 +51,7 @@
 
                 <ul class="site-menu js-clone-nav d-none">
                   <li class="has-children active">
-                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'select_genre' %}">Home</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="#">Menu One</a></li>
                       <li><a href="#">Menu Two</a></li>
@@ -89,77 +89,58 @@
 
 
     <div class="site-section bg-light">
-      <div class="container">
-
-        <div class="row mb-5" data-aos="fade-up">
-          <div class="col-md-12 text-center">
-            <h2 class="font-weight-bold text-black">Search Results</h2>
-          </div>
-        </div>
-        <div>
-          <label class="control control-checkbox">
-            Select
-            <input type="checkbox" checked="checked" />
-            <div class="control_indicator"></div>
-          </label>
-        </div>
-        <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-          <div class="image" style="background-image: url('/static/images/bwenda.jpg');"></div>
-          <div class="text">
-
-            <h3 class="font-weight-light"><a href="single-post.html">Episode 08: why bwenda is a poopnose</a></h3>
-            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Hussain Humadi <span class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-            <p class="mb-4">lmao idk. </p>
-
-            <div class="player">
-              <audio id="player2" preload="none" controls style="max-width: 100%">
-                <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-              </audio>
+      <form method="get" action="/confirmation/">
+          {% csrf_token %}
+          <div class="container">
+            <div class="row mb-5" data-aos="fade-up">
+              <div class="col-md-12 text-center">
+                <h2 class="font-weight-bold text-black">Search Results</h2>
+              </div>
             </div>
 
-          </div>
-        </div>
+            {% for podcast in podcasts %}
+              <div>
+                <label class="control control-checkbox">
+                    Select
+                    <input type="checkbox" name="{{ forloop.counter0 }}"/>
+                    <div class="control_indicator"></div>
+                </label>
+              </div>
+              <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                <div class="image" style="background-image: url('/static/media/{{ podcast.image_filename }}.jpg');"></div>
+                <div class="text">
 
-        {% for podcast in podcasts %}
-          <div>
-            <label class="control control-checkbox">
-                Select
-                <input type="checkbox" />
-                <div class="control_indicator"></div>
-            </label>
-          </div>
-          <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-            <div class="image" style="background-image: url('/static/media/{{ podcast.image_filename }}.jpg');"></div>
-            <div class="text">
-
-                <h3 class="font-weight-light"><a href="single-post.html">{{ podcast.name }}</a></h3>
-                <div class="text-white mb-3"><span class="text-black-opacity-05">
-                    <small>
-                        By {{ podcast.author }} <span class="sep">/</span> {{ podcast.date_published }} <span class="sep">/</span> {{ podcast.runtime }}
-                    </small></span>
+                    <h3 class="font-weight-light"><a href="{{ podcast.source }}" target="_blank">{{ podcast.name }}</a></h3>
+                    <div class="text-white mb-3"><span class="text-black-opacity-05">
+                        <small>
+                            By {{ podcast.author }} <span class="sep">/</span> {{ podcast.date_published }}
+                            <span class="sep">/</span> {{ podcast.duration }}
+                            <span class="sep">/</span> {{ podcast.upvotes }} Upvotes via Reddit comment
+                        </small></span>
+                    </div>
+                    <p class="mb-4">{{ podcast.description }}</p>
+                    <div class="player">
+    {#                    <audio id="player2" preload="none" controls style="max-width: 100%">#}
+    {#                    <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">#}
+    {#                    </audio>#}
+                    </div>
                 </div>
-                <p class="mb-4">{{ podcast.description }}</p>
-                <div class="player">
-{#                    <audio id="player2" preload="none" controls style="max-width: 100%">#}
-{#                    <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">#}
-{#                    </audio>#}
-                </div>
-            </div>
+              </div>
+            {% endfor %}
           </div>
-        {% endfor %}
+{#          hide keywords to pass back to view#}
+          <input type="hidden" id="keywords" name="keywords" value="{{ keywords }}">
 
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
-                <a href="{% url 'confirmation' %}">
+          <div class="container" data-aos="fade-up">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <button  class="btn cust-btn " type="submit" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
                     Confirm Selection
-                </a>
-            </button>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 

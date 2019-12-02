@@ -1,0 +1,63 @@
+{#<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+{#<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>#}
+{#<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
+{#<link rel="stylesheet" href="css/mainstyles.css">#}
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+    <head>
+        {% load static %}
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}" type="text/css"  >
+    </head>
+    <body>
+        <div class="col-md-12" align="center">
+            <div class="col-md-6">
+                <h1>Podcast Search Engine</h1>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/results/">
+                    {% csrf_token %}
+                    <label class="radio">Anime/Movies/Film/TV
+                      <input type="radio" checked="checked" name="genre" value="Anime/Movies/Film/TV">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Crime/Mystery/Conspiracy
+                      <input type="radio" name="genre" value="Crime/Mystery/Conspiracy">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Society/Culture
+                      <input type="radio" name="genre" value="Society/Culture">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Storytelling/Talk/Review
+                      <input type="radio" name="genre" value="Storytelling/Talk/Review">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Politics/News
+                      <input type="radio" name="genre" value="Politics/News">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Technology/Science/Education/Nerdy
+                      <input type="radio" name="genre" value="Technology/Science/Education/Nerdy">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Sports/Music/Entertainment/RPG/Food
+                      <input type="radio" name="genre" value="Sports/Music/Entertainment/RPG/Food">
+                      <span class="checkround"></span>
+                    </label>
+                    <label class="radio">Education/Myth/Nature/Religion
+                      <input type="radio" name="genre" value="Education/Myth/Nature/Religion">
+                      <span class="checkround"></span>
+                    </label>
+                    <button  class="btn cust-btn " type="submit" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">
+                        Search
+                    </button>
+{#                    <input type="submit" value="SEARCH">#}
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
